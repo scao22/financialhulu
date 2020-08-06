@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Financial Hulu - List Items</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<!--    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"-->
+<!--          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"-->
+<!--          rel="stylesheet" media="screen"/>-->
+
+<!--    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"-->
+<!--            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>-->
+
+<!--    <link href="../../static/css/spring-core.css"-->
+<!--          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>-->
+
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(items)}">
+        <h2>Item List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Item Id</th>
+                <th>User Id</th>
+                <th>Item Name</th>
+                <th>Purchase Date</th>
+                <th>Created Date</th>
+                <th>Item Comments</th>
+                <th>Category Id</th>
+                <th>Bank Id</th>
+                <th>Amount</th>
+            </tr>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.item_id}"></td>
+                <td th:text="${item.user_id}"></td>
+                <td th:text="${item.item_name}"></td>
+                <td th:text="${item.purchase_date}"></td>
+                <td th:text="${item.created_date}"></td>
+                <td th:text="${item.item_comments}"></td>
+                <td th:text="${item.category_id}"></td>
+                <td th:text="${item.bank_id}"></td>
+                <td th:text="${item.amount}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
